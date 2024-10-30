@@ -1,0 +1,11 @@
+file_format: "1"
+id: aegir
+name: ÆGIR
+type: shield
+url: https://github.com/JannisPetschenka/aegir
+requires: [seeeduino_xiao_ble]
+features:
+  - keys
+siblings:
+  - aegir_left
+  - aegir_right

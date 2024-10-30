@@ -1,0 +1,16 @@
+if SHIELD_AEGIR
+
+config ZMK_KEYBOARD_NAME
+    default "ÆGIR"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_AEGIR_LEFT || SHIELD_AEGIR_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif

@@ -1,0 +1,137 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include "keycodes_de.h"
+
+#define BASE 0
+#define SYM 1
+#define NAV 2
+#define ADJ 3
+
+&mt {
+quick-tap-ms = <100>;
+global-quick-tap;
+flavor = "tap-preferred";
+tapping-term-ms = <170>;
+};
+
+&lt {
+quick-tap-ms = <100>;
+global-quick-tap;
+flavor = "hold-preferred";
+tapping-term-ms = <170>;
+};
+
+/ {
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            global-quick-tap;
+            bindings =
+                <&kp>,
+                <&kp>;
+        };
+    };
+
+    keymap {
+            compatible = "zmk,keymap";
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+            base_layer {
+label= "BASE";
+// ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
+// ┃     Q     ┃     W     ┃     E     ┃     R     ┃     T     ┃   ┃     Y     ┃     U     ┃     I     ┃     O     ┃     P     ┃
+// ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+// ┃     A     ┃     S     ┃     D     ┃     F     ┃     G     ┃   ┃     H     ┃     J     ┃     K     ┃     L     ┃    ESC    ┃
+// ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+// ┃     Z     ┃     X     ┃     C     ┃     V     ┃     B     ┃   ┃     N     ┃     M     ┃     ,     ┃     .     ┃    TAB    ┃
+// ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+//                                     ┃    MO(1)  ┃    SPC    ┃   ┃    ENT    ┃    MO(2)  ┃           
+//                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┛
+    //&kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y       &kp U       &kp I       &kp O       &kp P
+    //&hm LGUI A  &hm LALT S  &hm LCTRL D  &hm LSHFT F  &kp G           &kp H       &hm RSHFT J  &hm RCTRL K  &hm LALT L &hm RGUI ESC
+    //&kp A       &kp S       &kp D       &kp F       &kp G           &kp H       &kp J       &kp K       &kp L       &kp ESC
+    //&kp Z       &kp X       &kp C       &kp V       &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &kp TAB
+bindings = <
+    &kp Q       &kp W       &kp E        &kp R        &kp T           &kp Y       &kp U        &kp I        &kp O       &kp P
+    &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F  &kp G           &kp H       &mt RSHFT J  &mt RCTRL K  &mt LALT L  &hm RGUI ESC
+    &kp Z       &kp X       &kp C        &kp V        &kp B           &kp N       &kp M        &kp COMMA    &kp DOT     &kp TAB
+                                         &mo SYM      &kp SPACE       &kp RET     &mo NAV 
+                    >;
+            };
+
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+            sim_layer {
+label= "SYM";
+// ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
+// ┃     @     ┃     ´     ┃     (     ┃     )     ┃     '     ┃   ┃     \     ┃     [     ┃     ]     ┃           ┃           ┃
+// ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+// ┃     €     ┃     ~     ┃     {     ┃     }     ┃     "     ┃   ┃     /     ┃     <     ┃     >     ┃           ┃     #     ┃
+// ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+// ┃           ┃     ^     ┃     |     ┃     :     ┃     ;     ┃   ┃     =     ┃     +     ┃     *     ┃     _     ┃     -     ┃
+// ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+//                                     ┃           ┃           ┃   ┃           ┃           ┃           
+//                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┛
+bindings = <
+    &kp DE_AT     &kp DE_ACUT    &kp DE_LPRN   &kp DE_RPRN   &kp DE_QUOT            &kp DE_SLSH   &kp DE_LBRC   &kp DE_RBRC   &none         &none
+    &kp DE_EURO   &kp DE_TILDE   &kp DE_LCBR   &kp DE_RCBR   &kp DE_DQUO            &kp DE_BSLS   &kp DE_LABK   &kp DE_RABK   &none         &kp DE_HASH 
+    &none         &kp DE_CARET   &kp DE_PIPE   &kp DE_COLN   &kp DE_SCLN            &kp DE_EQL    &kp DE_PLUS   &kp DE_ASTR   &kp DE_UNDS   &kp DE_MINS
+                                      &none      &none                              &none         &none
+                        >;
+                };
+
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+// ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
+// ┃   CAPS    ┃     7     ┃     8     ┃     9     ┃     +     ┃   ┃    HOME   ┃    PGUP   ┃    PGDN   ┃    END    ┃    DEL    ┃
+// ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+// ┃           ┃     4     ┃     5     ┃     6     ┃     0     ┃   ┃    LEFT   ┃    DOWN   ┃     UP    ┃   RIGHT   ┃    BSPC   ┃
+// ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+// ┃           ┃     1     ┃     2     ┃     3     ┃     -     ┃   ┃ G(C(LEFT))┃           ┃           ┃G(C(RIGHT))┃           ┃
+// ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+//                                     ┃   TRANS   ┃   TRANS   ┃   ┃   TRANS   ┃   TRANS   ┃           
+//                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┛
+                nav_layer {
+label= "NAV";
+ bindings = <
+    &kp CAPS   &kp 7   &kp 8   &kp 9   &kp PLUS       &kp HOME           &kp PG_UP   &kp PG_DN   &kp END             &kp DEL
+    &none      &kp 4   &kp 5   &kp 6   &kp 0          &kp LEFT           &kp DOWN    &kp UP      &kp RIGHT           &kp BSPC
+    &none      &kp 1   &kp 2   &kp 3   &kp MINUS      &kp LG(LC(LEFT))   &none       &none       &kp LG(LC(RIGHT))   &none
+                               &none   &none          &none              &none
+                        >;
+                };
+
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+                adjust_layer {
+label= "ADJ";
+// ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
+// ┃    F1     ┃    F2     ┃    F3     ┃    F4     ┃    F5     ┃   ┃    F6     ┃    F7     ┃    F8     ┃    F9     ┃    F10    ┃
+// ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+// ┃           ┃           ┃           ┃           ┃           ┃   ┃  BT_CLR   ┃  OUT_TOG  ┃   BT_NXT  ┃   BT_PRV  ┃    F11    ┃
+// ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+// ┃   RESET   ┃  BOOTLOAD ┃           ┃           ┃           ┃   ┃ SONG_PRES ┃   V_UP    ┃   V_DOWN  ┃ SONG_NEXT ┃    F12    ┃
+// ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+//                                     ┃           ┃           ┃   ┃           ┃           ┃           
+//                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┛
+ bindings = <
+    &kp F1        &kp F2       &kp F3   &kp F4   &kp F5          &kp F6       &kp F7              &kp F8            &kp F9       &kp F10
+    //&none         &none        &none    &none    &none           &bt BT_CLR   &out OUT_TOG        &bt BT_NXT        &kp BT_PRV   &kp F11  
+    &none         &none        &none    &none    &none           &none &none        &none        &none   &kp F11  
+    //&sys_reset    &bootloader  &none    &none    &none           &kp C_PREV   &kp C_VOLUME_DOWN   &kp C_VOLUME_UP   &kp C_NEXT   &kp F12 
+    &none    &none  &none    &none    &none           &kp C_PREV   &kp C_VOLUME_DOWN   &kp C_VOLUME_UP   &kp C_NEXT   &kp F12 
+                                        &none    &none           &none        &none
+                //&sys_reset  &out OUT_TOG  &tdbtclr &bootloader &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2
+                        >;
+                };
+        };
+};

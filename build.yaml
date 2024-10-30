@@ -19,4 +19,6 @@
 ---
 include:
   - board: seeeduino_xiao_ble
-    shield: two_percent_milk
+    shield: aegir_left
+  - board: seeeduino_xiao_ble
+    shield: aegir_right
