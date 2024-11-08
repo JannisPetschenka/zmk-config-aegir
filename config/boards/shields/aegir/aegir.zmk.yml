@@ -1,9 +1,8 @@
 file_format: "1"
 id: aegir
-# name: ÆGIR
 name: AEGIR
 type: shield
-url: https://github.com/JannisPetschenka/aegir
+url: https://github.com/JannisPetschenak/aegir
 requires: [seeeduino_xiao_ble]
 features:
   - keys
