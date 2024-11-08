@@ -6,7 +6,7 @@
 
 #include "aegir.dtsi"
 
-&kscan0 {
+&default_kscan {
     col-gpios
         = <&xiao_d 5 GPIO_ACTIVE_HIGH>
         , <&xiao_d 0 GPIO_ACTIVE_HIGH>

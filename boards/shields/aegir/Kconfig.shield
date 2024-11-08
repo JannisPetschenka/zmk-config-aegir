@@ -1,5 +1,5 @@
 config SHIELD_AEGIR_LEFT
-    def_bool $(shields_list_contains,aegir_left)
+    def_bool $(shields_list_contains, aegir_left)
 
 config SHIELD_AEGIR_RIGHT
-    def_bool $(shields_list_contains,aegir_right)
+    def_bool $(shields_list_contains, aegir_right)
