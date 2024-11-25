@@ -25,7 +25,7 @@
 #define DE_ASTR LS(RBKT)    // *
 #define DE_PLUS RBKT        // +
 #define DE_EQL LS(N0)       // =
-#define DE_TILDE LS(RA(N8)) // ~
+#define DE_TILDE RA(N) // ~
 #define DE_DLR LS(N4)       // $
 #define DE_PERC LS(N5)      // %
 #define DE_EXCL LS(N1)      // !
