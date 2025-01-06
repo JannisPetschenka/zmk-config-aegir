@@ -1,6 +1,9 @@
 # Copyright (c) 2022 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
+config SHIELD_AEGIR_DONGLE
+    def_bool $(shields_list_contains,aegir_dongle)
+
 config SHIELD_AEGIR_LEFT
     def_bool $(shields_list_contains,aegir_left)
 

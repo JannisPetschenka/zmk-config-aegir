@@ -125,8 +125,8 @@ label= "NAV";
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
     &kp CAPS   &kp N7   &kp N8   &kp N9   &kp PLUS       &kp HOME           &kp PG_UP   &kp PG_DN   &kp END             &kp DEL
-    &none      &kp N4   &kp N5   &kp N6   &kp N0          &kp LEFT           &kp DOWN    &kp UP      &kp RIGHT           &kp BSPC
-    &none      &kp N1   &kp N2   &kp N3   &kp MINUS      &kp LG(LC(LEFT))   &none       &none       &kp LG(LC(RIGHT))   &none
+    &to MAC      &kp N4   &kp N5   &kp N6   &kp N0          &kp LEFT           &kp DOWN    &kp UP      &kp RIGHT           &kp BSPC
+    &to BASE      &kp N1   &kp N2   &kp N3   &kp MINUS      &kp LG(LC(LEFT))   &none       &none       &kp LG(LC(RIGHT))   &none
                                &none   &none          &none              &none
                         >;
                 };
@@ -147,7 +147,7 @@ label= "ADJ";
     &kp F1        &kp F2       &kp F3       &kp F4       &kp F5          &kp F6       &kp F7              &kp F8            &kp F9          &kp F10
     &kp DE_EXCL   &kp DE_QUES  &kp DE_SECT  &kp DE_PERC  &kp DE_AMP      &bt BT_CLR   &bt_macro_linux &bt_macro_mac &bt_macro_win   &kp F11  
     &none         &kp DE_UE    &kp DE_OE    &kp DE_AE    &kp DE_SS       &kp C_PREV   &kp C_VOLUME_DOWN   &kp C_VOLUME_UP   &kp C_NEXT      &kp F12 
-                                            &tog MAC      &tog BASE        &out OUT_BLE &out OUT_USB
+                                            &none      &none        &out OUT_BLE &out OUT_USB
                         >;
                 };
         };
