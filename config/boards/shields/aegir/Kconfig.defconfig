@@ -1,14 +1,11 @@
 # Copyright (c) 2022 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_AEGIR_DONGLE
+if SHIELD_AEGIR_CENTRAL_DONGLE || SHIELD_AEGIR_CENTRAL_LEFT
 config ZMK_KEYBOARD_NAME
     default "AEGIR"
 
 config ZMK_SPLIT_ROLE_CENTRAL
-    default y
-
-config ZMK_SPLIT
     default y
 
 config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
@@ -21,6 +18,20 @@ config BT_MAX_PAIRED
     default 3
 endif
 
+if ZMK_DISPLAY
+
+config I2C
+    default y
+
+config SSD1306
+    default y
+
+choice ZMK_DISPLAY_WORK_QUEUE
+    default ZMK_DISPLAY_WORK_QUEUE_DEDICATED
+endchoice
+
+endif
+
 # if SHIELD_AEGIR_LEFT
 #
 # config ZMK_KEYBOARD_NAME
@@ -31,7 +42,7 @@ endif
 #
 # endif
 
-if SHIELD_AEGIR_LEFT || SHIELD_AEGIR_RIGHT
+if SHIELD_AEGIR_CENTRAL_DONGLE || SHIELD_AEGIR_CENTRAL_LEFT || SHIELD_AEGIR_PERIPHERAL_LEFT || SHIELD_AEGIR_PERIPHERAL_RIGHT
 
 config ZMK_SPLIT
     default y

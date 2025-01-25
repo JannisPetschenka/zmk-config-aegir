@@ -1,11 +1,12 @@
 include:
   - board: seeeduino_xiao_ble
-    shield: aegir_dongle
+    shield: aegir_central_left
   - board: seeeduino_xiao_ble
-    shield: aegir_left
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    shield: aegir_peripheral_left
   - board: seeeduino_xiao_ble
-    shield: aegir_right
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    shield: aegir_peripheral_right
   - board: seeeduino_xiao_ble
     shield: settings_reset
+  - board: seeeduino_xiao_ble
+    shield: aegir_central_dongle dongle_display
+    artifact_name: aegir_central_dongle
