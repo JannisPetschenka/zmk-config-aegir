@@ -181,13 +181,13 @@ label= "ADJ";
 // ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 // ┃           ┃    ü      ┃    ö      ┃    ä      ┃    ß      ┃   ┃ SONG_PRES ┃   V_UP    ┃   V_DOWN  ┃ SONG_NEXT ┃    F12    ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃           ┃           ┃   ┃   RESET   ┃  BOOTLOAD ┃           
+//                                     ┃  TO MAC   ┃           ┃   ┃ TOGGLE_OUT┃ TO BASE   ┃           
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
     &kp F1        &kp F2       &kp F3       &kp F4       &kp F5          &kp F6       &kp F7              &kp F8            &kp F9          &kp F10
     &kp DE_EXCL   &kp DE_QUES  &kp DE_SECT  &kp DE_PERC  &kp DE_AMP      &bt BT_CLR   &bt_macro_linux &bt_macro_mac &bt_macro_win   &kp F11  
     &none         &kp DE_UE    &kp DE_OE    &kp DE_AE    &kp DE_SS       &kp C_PREV   &kp C_VOLUME_DOWN   &kp C_VOLUME_UP   &kp C_NEXT      &kp F12 
-                                            &none        &none           &out OUT_BLE &out OUT_USB
+                                            &to MAC      &none           &out OUT_TOG &to BASE
                         >;
                 };
         };
