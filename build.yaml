@@ -8,5 +8,4 @@ include:
   - board: seeeduino_xiao_ble
     shield: settings_reset
   - board: seeeduino_xiao_ble
-    shield: aegir_central_dongle dongle_display
-    artifact_name: aegir_central_dongle
+    shield: aegir_central_dongle
