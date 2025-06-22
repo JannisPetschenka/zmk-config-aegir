@@ -1,15 +1,14 @@
+---
 include:
+  - board: raytac_mdbt50q_rx
+    shield: aegir_dongle
   - board: seeeduino_xiao_ble
-    shield: aegir_central_left
+    shield: aegir_left
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   - board: seeeduino_xiao_ble
-    shield: aegir_peripheral_left
-  - board: seeeduino_xiao_ble
-    shield: aegir_peripheral_right
+    shield: aegir_right
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   - board: seeeduino_xiao_ble
     shield: settings_reset
-  - board: seeeduino_xiao_ble
-    shield: aegir_central_dongle
-  - board: raytac_mdbt50q_rx
-    shield: aegir_central_dongle
   - board: raytac_mdbt50q_rx
     shield: settings_reset
