@@ -4,10 +4,15 @@ manifest:
     #   url-base: https://github.com/zmkfirmware
     - name: zmkfirmware
       url-base: https://github.com/Genteure
+    - name: rschenk
+      url-base: https://github.com/rschenk
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: feat/battery-reporting
       import: app/west.yml
+    - name: zmk-component-raytac-dongle
+      remote: rschenk
+      revision: main
   self:
     path: config
