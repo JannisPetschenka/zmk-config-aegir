@@ -40,15 +40,15 @@
 
 // linux
 
-#define LN_DE_LBRC RA(N8)             // [
-#define LN_DE_RBRC RA(N9)             // ]
-#define LN_DE_LPRN LS(N8)             // (
-#define LN_DE_RPRN LS(N9)             // )
-#define LN_DE_LCBR RA(N7)             // {
-#define LN_DE_RCBR RA(N0)             // }
-#define LN_TILDE RA(NON_US_BACKSLASH) // ~
-#define LN_DE_LABK NUBS               // <
-#define LN_DE_RABK LS(NUBS)           // >
-#define LN_DE_PIPE RA(NUBS)           // |
-#define LN_DE_BSLS RA(MINUS)          // (backslash)
-#define LN_DE_AT RA(Q)                // @
+#define LN_DE_LBRC RA(N8)    // [
+#define LN_DE_RBRC RA(N9)    // ]
+#define LN_DE_LPRN LS(N8)    // (
+#define LN_DE_RPRN LS(N9)    // )
+#define LN_DE_LCBR RA(N7)    // {
+#define LN_DE_RCBR RA(N0)    // }
+#define LN_TILDE RA(DE_PLUS) // ~
+#define LN_DE_LABK NUBS      // <
+#define LN_DE_RABK LS(NUBS)  // >
+#define LN_DE_PIPE RA(NUBS)  // |
+#define LN_DE_BSLS RA(MINUS) // (backslash)
+#define LN_DE_AT RA(Q)       // @
